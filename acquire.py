@@ -21,8 +21,10 @@ def wrangle_zillow():
         regionidzip as zip,
         taxvaluedollarcnt as home_value,
         taxamount as taxes,
-        propertylandusetypeid as SFR_property_type,
-        fips
+        propertylandusetypeid as SFR,
+        fips,
+        latitude,
+        longitude
     FROM
         predictions_2017
     JOIN
@@ -43,12 +45,12 @@ def wrangle_zillow():
 
 def clean_zillow_data(df):
     df = df.dropna()
-    zillow['bathrooms'] = zillow['bathrooms'].astype(int)
-    zillow['bedrooms'] = zillow['bedrooms'].astype(int)
-    zillow['sqft'] = zillow['sqft'].astype(int)
-    zillow['zip'] = zillow['zip'].astype(int)
-    zillow['home_value'] = zillow['home_value'].astype(int)
-    zillow['SFR_property_code'] = zillow['SFR_property_code'].astype(int)
-    zillow['fips'] = zillow['fips'].astype(int)
+    df['bathrooms'] = df['bathrooms'].astype(int)
+    df['bedrooms'] = df['bedrooms'].astype(int)
+    df['sqft'] = df['sqft'].astype(int)
+    df['zip'] = df['zip'].astype(int)
+    df['home_value'] = df['home_value'].astype(int)
+    df['SFR_property_code'] = df['SFR_property_code'].astype(int)
+    df['fips'] = df['fips'].astype(int)
     return df
 

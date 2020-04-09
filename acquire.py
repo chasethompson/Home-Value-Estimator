@@ -28,16 +28,12 @@ def wrangle_zillow():
     FROM
         predictions_2017
     JOIN
-        properties_2017 USING(id)
+        properties_2017 USING(parcelid)
     WHERE
         (transactiondate >= '2017-05-01' AND transactiondate <= '2017-06-30')
         AND bathroomcnt > 0
         AND bedroomcnt > 0
-        AND calculatedfinishedsquarefeet > 0
-        AND taxvaluedollarcnt > 0
-        AND taxamount > 0
-        AND propertylandusetypeid = '261'
-        AND fips > 0
+        AND propertylandusetypeid = 261
     ORDER BY fips;
     """
     zillow = pd.read_sql(query,url)
@@ -50,7 +46,9 @@ def clean_zillow_data(df):
     df['sqft'] = df['sqft'].astype(int)
     df['zip'] = df['zip'].astype(int)
     df['home_value'] = df['home_value'].astype(int)
-    df['SFR_property_code'] = df['SFR_property_code'].astype(int)
+    df['SFR'] = df['SFR'].astype(int)
     df['fips'] = df['fips'].astype(int)
+    df['latitude'] = df['latitude'] / 1000000
+    df['longitude'] = df['longitude'] / 1000000
     return df
 

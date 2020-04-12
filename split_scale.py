@@ -16,6 +16,19 @@ def split_my_data(df, train_pct, seed=None):
     train, test = train_test_split(df, train_size=train_pct, random_state=seed)
     return train, test
 
+def min_max_scaler(train, test):
+    """
+
+    When calling the function rename the variables to maintain original:
+    X_train_min_max_scaled, X_test_min_max_scaled = min_max_scaler(X_train, X_test)
+
+    """  
+
+    scaler = MinMaxScaler(copy=True, feature_range=(0,1)).fit(train)
+    train_scaled = pd.DataFrame(scaler.transform(train), columns=train.columns.values).set_index([train.index.values])
+    test_scaled = pd.DataFrame(scaler.transform(test), columns=test.columns.values).set_index([test.index.values])
+    return scaler, train_scaled, test_scaled
+
 def iqr_robust_scaler(train, test):
     """
     Scales features using stats that are robust to outliers by removing the median and scaling data to the IQR.

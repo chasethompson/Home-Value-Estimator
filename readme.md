@@ -104,7 +104,8 @@ model.py: will have the functions to fit, predict and evaluate the model
 
 Your notebook will contain various algorithms and/or hyperparameters tried, along with the evaluation code and results, before settling on the final algorithm.
 
-Be sure and evaluate your model using the standard techniques: plotting the residuals, computing the evaluation metric (SSE, RMSE, and/or MSE), comparing to baseline, plotting \(y\)by \(^y\)
+Be sure and evaluate your model using the standard techniques: plotting the residuals, computing the evaluation metric (SSE, RMSE, and/or MSE), comparing to baseline, plotting ![equation](https://latex.codecogs.com/gif.latex?\y) by ![equation](https://latex.codecogs.com/gif.latex?\^y)
+
 
 
 ### SUMMARY
@@ -120,9 +121,9 @@ Must use your own env file to access data.
 ## *Hypothesis Testing*
 Lets do some hypothesis testing 
 
-* \($H_0$\): there is no relationship between home values and number of bedrooms, bathrooms and square_feet.
+* Ho: there is no relationship between home values and number of bedrooms, bathrooms and square_feet.
 
-* \($H_a$\): There is a relationship between home values and number of bedrooms, bathrooms and square_feet
+* Ha: There is a relationship between home values and number of bedrooms, bathrooms and square_feet
 ***
 
 ## *Technical Skills used*

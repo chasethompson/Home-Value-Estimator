@@ -7,9 +7,12 @@
 ## *Background*:
 
 > We want to be able to predict the values of single unit properties that the tax district assesses using the property data from those whose last transaction was during the "hot months" (in terms of real estate demand) of May and June in 2017. We also need some additional information outside of the model.
+
 > Zach lost the email that told us where these properties were located. Ugh, Zach :-/. Because property taxes are assessed at the county level, we would like to know what states and counties these are located in.
+
 > We'd also like to know the distribution of tax rates for each county.
 The data should have the tax amounts and tax value of the home, so it shouldn't be too hard to calculate. Please include in your report to us the distribution of tax rates for each county so that we can see how much they vary within the properties in the county and the rates the bulk of the properties sit around.
+
 > Note that this is separate from the model you will build, because if you use tax amount in your model, you would be using a future data point to predict a future data point, and that is cheating! In other words, for prediction purposes, we won't know tax amount until we know tax value.
 
 ## *Other notes*:
@@ -32,7 +35,7 @@ Your customer is the zillow data science team. State your goals as if you were d
 
 The report/presentation slides should summarize your findings about the drivers of the Zestimate error. This will come from the analysis you do during the exploration phase of the pipeline. In the report, you will have charts that visually tell the story of what is driving the errors.
 
-2. A github repository containing your jupyter notebook that walks through the pipeline along with the .py files necessary to reproduce your model.
+2. A github repository containing your jupyter notebook that walks through the pipeline along with the .py files necessary to reproduce your model. The data dictionary can be found in this file.
 
 *model must be reproducible by someone with their own env.py file*
 
